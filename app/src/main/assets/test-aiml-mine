@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+  <category>
+      <pattern>hello^</pattern>
+      <template><srai>hi^</srai></template>
+  </category>
+
+  <category>
+     <pattern>hey^</pattern>
+     <template><srai>hi^</srai></template>
+  </category>
+
+  <category>
+    <pattern>good mornin^</pattern>
+    <template><srai>hi^</srai></template>
+  </category>
+
+  <category>
+      <pattern>mornin^</pattern>
+      <template><srai>hi^</srai></template>
+    </category>
+
+  <category>
+      <pattern>good afternoon^</pattern>
+      <template><srai>hi^</srai></template>
+  </category>
+
+  <category>
+      <pattern>good evening^</pattern>
+      <template><srai>hi^</srai></template>
+    </category>
+
+  <category>
+    <pattern>hi^</pattern>
+    <template>Hello, I will be your travel assistant. What's your name?
+        <think><set name="sub">username</set></think>
+    </template>
+  </category>
+
+
+  <sub name="username">
+      <category>
+          <pattern>*</pattern>
+          <template>
+              Alright, <star/>, let's find out the perfect destination for you.
+              Which continent is the most appealing for you? Choose one of the following: North America, South
+              America, Africa, Asia, Europe, Australia, Oceania.
+                <think><set name="sub">continent</set></think>
+          </template>
+      </category>
+  </sub>
+    <sub name="continent">
+      <category>
+          <pattern>North America</pattern>
+          <template>
+              Which landscape would interest you the most? Choose from beach, mountain, desert, none.
+              <think><set name="sub">NA-land</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>South America</pattern>
+          <template>
+              Would you like a destination with beach?
+              <think><set name="sub">SA-beach</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>Australia</pattern>
+          <template>
+              Would you like a destination with beach?
+              <think><set name="sub">Au-beach</set></think>
+          </template>
+      </category>
+
+      <category>
+                <pattern>Europe</pattern>
+                <template>
+                    Which landscape would interest you the most? Choose from beach, mountain, none.
+                    <think><set name="sub">Eu-land</set></think>
+                </template>
+      </category>
+
+      <category>
+                <pattern>Africa</pattern>
+                <template>
+                    Which landscape would interest you the most? Choose from beach, mountain, none.
+                    <think><set name="sub">Af-land</set></think>
+                </template>
+      </category>
+    <category>
+                <pattern>Asia</pattern>
+                <template>
+                    Which landscape would interest you the most? Choose from beach, mountain, none.
+                    <think><set name="sub">As-land</set></think>
+                </template>
+      </category>
+
+       <category>
+                       <pattern>Oceania</pattern>
+                       <template>
+                           Would you like a destination with beach? Yes or No.
+                           <think><set name="sub">Oc-land</set></think>
+                       </template>
+             </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Please type a valid continent.</template>
+      </category>
+    </sub>
+
+
+</aiml>
