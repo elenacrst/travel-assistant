@@ -1,0 +1,2282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+  <category>
+      <pattern>SALUT ^</pattern>
+      <template><srai>BUNA ^</srai></template>
+  </category>
+
+  <category>
+      <pattern>HEI ^</pattern>
+      <template><srai>BUNA ^</srai></template>
+  </category>
+
+  <category>
+    <pattern>BUNA ^</pattern>
+    <template>Buna, cum te numesti?
+        <think><set name="topic">intro</set></think>
+    </template>
+  </category>
+
+
+  <topic name="intro">
+      <category>
+          <pattern>*</pattern>
+          <template>
+              <star/>, astazi te voi ajuta sa gasesti un parfum potrivit pentru tine.<br/>
+                In ce buget te incadrezi?
+                <think><set name="topic">buget</set></think>
+          </template>
+      </category>
+  </topic>
+
+
+
+    <topic name="buget">
+      <category>
+          <pattern>SCAZUT</pattern>
+          <template>
+              Te intereseaza apa de toaleta sau apa de parfum?
+              <think><set name="topic">genScazut</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>MEDIU</pattern>
+          <template>
+              Te intereseaza apa de toaleta sau apa de parfum?
+              <think><set name="topic">genMediu</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>RIDICAT</pattern>
+          <template>
+              Te intereseaza apa de toaleta sau apa de parfum?
+              <think><set name="topic">genRidicat</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa raspunzi doar cu "scazut", "mediu" sau "ridicat".</template>
+      </category>
+    </topic>
+
+
+    <topic name="genScazut">
+      <category>
+          <pattern> ^ TOALETA</pattern>
+          <template>
+              Ce culoare preferi din spectrul ROGVAIV? (rosu, oranj, galben, verde, albastru, indigo sau violet)
+              <think><set name="topic">culoareScazut</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> ^ PARFUM</pattern>
+          <template>
+              Ce culoare preferi din spectrul ROGVAIV? (rosu, oranj, galben, verde, albastru, indigo sau violet)
+              <think><set name="topic">culoareScazutParfum</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre cele doua variante.</template>
+      </category>
+    </topic>
+
+
+    <topic name="culoareScazut">
+      <category>
+          <pattern> ROSU </pattern>
+          <template>
+              Ce miros preferi dintre piper, ghimbir si mosc?
+              <think><set name="topic">rosuScazut</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> ORANJ </pattern>
+          <template>
+              Ce miros preferi dintre portocala, mandarina si mango?
+              <think><set name="topic">oranjScazut</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> GALBEN </pattern>
+          <template>
+              Ce miros preferi dintre vanilie, mar si piersica?
+              <think><set name="topic">galbenScazut</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> VERDE </pattern>
+          <template>
+              Ce miros preferi dintre lacramioare, cimbru si lamaie?
+              <think><set name="topic">verdeScazut</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> ALBASTRU </pattern>
+          <template>
+              Ce miros preferi dintre crin, zambile si iasomie?
+              <think><set name="topic">albastruScazut</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> INDIGO </pattern>
+          <template>
+              Ce miros preferi dintre liliac, floare de cires si narcisa?
+              <think><set name="topic">indigoScazut</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> VIOLET </pattern>
+          <template>
+              Ce miros preferi dintre trandafir, bujor si zmeura?
+              <think><set name="topic">violetScazut</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste culori.</template>
+      </category>
+    </topic>
+
+
+    <topic name="rosuScazut">
+      <category>
+          <pattern> PIPER </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.emag.ro/dolce-gabbana-3-l-imperatrice-apa-de-toaleta-50-ml-femei-0737052391106/pd/D97ZK0BBM/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> GHIMBIR </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.yves-rocher.ro/apa_de_toaleta_maracuja"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> MOSC </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.emag.ro/apa-de-toaleta-cu-parfum-de-mosc-100ml-11/pd/DLYYP7BBM/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+
+
+    <topic name="oranjScazut">
+      <category>
+          <pattern> PORTOCALA </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/moschino/funny-eau-de-toilette-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> MANDARINA </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.avon.ro/produs/56896"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> MANGO </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/oscar-de-la-renta/so-de-la-renta-eau-de-toilette-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+    <topic name="galbenScazut">
+      <category>
+          <pattern> VANILIE </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/elizabeth-arden/true-love-eau-de-toilette-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> MAR </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.emag.ro/apa-de-toaleta-salvador-dali-sun-roses-femei-100-ml-parf-salv-119146/pd/DRZ2CMBBM/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> PIERSICA </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.emag.ro/apa-de-toaleta-salvatore-ferragamo-incanto-shine-femei-50ml-8032529114748/pd/DNJTZBBBM/?ref=fam#50-ml"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+
+    <topic name="verdeScazut">
+      <category>
+          <pattern> LACRAMIOARE </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://ro.oriflame.com/products/product?code=33241"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> CIMBRU </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/elizabeth-arden/green-tea-yuzu-eau-de-toilette-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> LAMAIE </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.avon.ro/produs/65699"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+
+    <topic name="albastruScazut">
+      <category>
+          <pattern> CRIN </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/guess/girl-eau-de-toilette-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> ZAMBILE </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/oriflame/divine-eau-de-toilette-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> IASOMIE </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.emag.ro/apa-de-toaleta-cerruti-1881-femei-100ml-688575134490/pd/DCHNZBBBM/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+
+        <topic name="indigoScazut">
+      <category>
+          <pattern> LILIAC </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/c-thru/glamorous-eau-de-toilette-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> FLOARE DE CIRES </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.yves-rocher.ro/apa_de_toaleta_flori_de_cires"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> NARCISA </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/elizabeth-taylor/white-diamonds-eau-de-toilette-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+
+    <topic name="violetScazut">
+      <category>
+          <pattern> TRANDAFIR </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/elizabeth-arden/red-door-eau-de-toilette-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> BUJOR </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/avon/pur-blanca-eau-de-toilette-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> ZMEURA </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/jil-sander/sensations-eau-de-toilette-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+
+
+
+
+
+    <topic name="culoareScazutParfum">
+      <category>
+          <pattern> ROSU </pattern>
+          <template>
+              Ce miros preferi dintre piper, ghimbir si mosc?
+              <think><set name="topic">rosuScazutParfum</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> ORANJ </pattern>
+          <template>
+              Ce miros preferi dintre portocala, mandarina si mango?
+              <think><set name="topic">oranjScazutParfum</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> GALBEN </pattern>
+          <template>
+              Ce miros preferi dintre vanilie, mar si piersica?
+              <think><set name="topic">galbenScazutParfum</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> VERDE </pattern>
+          <template>
+              Ce miros preferi dintre lacramioare, cimbru si lamaie?
+              <think><set name="topic">verdeScazutParfum</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> ALBASTRU </pattern>
+          <template>
+              Ce miros preferi dintre crin, zambile si iasomie?
+              <think><set name="topic">albastruScazutParfum</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> INDIGO </pattern>
+          <template>
+              Ce miros preferi dintre liliac, floare de cires si narcisa?
+              <think><set name="topic">indigoScazutParfum</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> VIOLET </pattern>
+          <template>
+              Ce miros preferi dintre trandafir, bujor si zmeura?
+              <think><set name="topic">violetScazutParfum</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste culori.</template>
+      </category>
+    </topic>
+
+
+    <topic name="rosuScazutParfum">
+      <category>
+          <pattern> PIPER </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://ro.oriflame.com/products/product?code=23853"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> GHIMBIR </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://ro.oriflame.com/products/product?code=31099"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> MOSC </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/lacoste/pour-femme-eau-de-parfum-pentru-femei/p-63023/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+
+
+    <topic name="oranjScazutParfum">
+      <category>
+          <pattern> PORTOCALA </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/lanvin/marry-me-eau-de-parfum-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> MANDARINA </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.avon.ro/produs/31604"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> MANGO </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/christina-aguilera/inspire-eau-de-parfum-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+
+    <topic name="galbenScazutParfum">
+      <category>
+          <pattern> VANILIE </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/police/to-be-the-queen-eau-de-parfum-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> MAR </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/guess/guess-eau-de-parfum-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> PIERSICA </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/lanvin/eclat-darpege-eau-de-parfum-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+
+    <topic name="verdeScazutParfum">
+      <category>
+          <pattern> LACRAMIOARE </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.avon.ro/produs/55562"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> CIMBRU </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/rasasi/dhanal-oudh-jurrah-eau-de-parfum-unisex/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> LAMAIE </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/calvin-klein/truth-eau-de-parfum-pentru-femei/p-60122/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+
+    <topic name="albastruScazutParfum">
+      <category>
+          <pattern> CRIN </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.emag.ro/apa-de-parfum-estee-lauder-pleasures-femei-50ml-27131043294/pd/D0NPZBBBM/?ref=fam#50-ml"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> ZAMBILE </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/clinique/happy-heart-eau-de-parfum-pentru-femei/p-60140/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> IASOMIE </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/lanvin/rumeur-eau-de-parfum-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+
+        <topic name="indigoScazutParfum">
+      <category>
+          <pattern> LILIAC </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/trussardi/my-name-eau-de-parfum-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> FLOARE DE CIRES </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.avon.ro/produs/15428"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> NARCISA </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/clean/rain-eau-de-parfum-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+
+    <topic name="violetScazutParfum">
+      <category>
+          <pattern> TRANDAFIR </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/jimmy-choo/illicit-eau-de-parfum-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> BUJOR </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/swiss-arabian/edge-eau-de-parfum-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> ZMEURA </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/ariana-grande/ari-by-ariana-grande-eau-de-parfum-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+
+
+
+
+
+
+    <topic name="genMediu">
+      <category>
+          <pattern> ^ TOALETA</pattern>
+          <template>
+              Ce culoare preferi din spectrul ROGVAIV? (rosu, oranj, galben, verde, albastru, indigo sau violet)
+              <think><set name="topic">culoareMediu</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> ^ PARFUM</pattern>
+          <template>
+              Ce culoare preferi din spectrul ROGVAIV? (rosu, oranj, galben, verde, albastru, indigo sau violet)
+              <think><set name="topic">culoareMediuParfum</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre cele doua variante.</template>
+      </category>
+    </topic>
+
+
+    <topic name="culoareMediu">
+      <category>
+          <pattern> ROSU </pattern>
+          <template>
+              Ce miros preferi dintre piper, ghimbir si mosc?
+              <think><set name="topic">rosuMediu</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> ORANJ </pattern>
+          <template>
+              Ce miros preferi dintre portocala, mandarina si mango?
+              <think><set name="topic">oranjMediu</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> GALBEN </pattern>
+          <template>
+              Ce miros preferi dintre vanilie, mar si piersica?
+              <think><set name="topic">galbenMediu</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> VERDE </pattern>
+          <template>
+              Ce miros preferi dintre lacramioare, cimbru si lamaie?
+              <think><set name="topic">verdeMediu</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> ALBASTRU </pattern>
+          <template>
+              Ce miros preferi dintre crin, zambile si iasomie?
+              <think><set name="topic">albastruMediu</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> INDIGO </pattern>
+          <template>
+              Ce miros preferi dintre liliac, floare de cires si narcisa?
+              <think><set name="topic">indigoMediu</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> VIOLET </pattern>
+          <template>
+              Ce miros preferi dintre trandafir, bujor si zmeura?
+              <think><set name="topic">violetMediu</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste culori.</template>
+      </category>
+    </topic>
+
+
+    <topic name="rosuMediu">
+      <category>
+          <pattern> PIPER </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.emag.ro/apa-de-toaleta-hermes-eau-des-merveilles-femei-100ml-pl-557500/pd/DLR3HMBBM/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> GHIMBIR </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/jean-p-gaultier/classique-eau-de-toilette-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> MOSC </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/calvin-klein/sheer-beauty-eau-de-toilette-pentru-femei/p-77902/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+
+
+    <topic name="oranjMediu">
+      <category>
+          <pattern> PORTOCALA </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.emag.ro/apa-de-toaleta-christian-dior-miss-dior-cherie-l-eau-femei-100-ml-parf-chri-112167/pd/DNGVRMBBM/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> MANDARINA </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/guerlain/aqua-allegoria-mandarine-basilic-eau-de-toilette-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> MANGO </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.emag.ro/apa-de-toaleta-gucci-envy-me-femei-100ml-766124019402/pd/DG2WLBBBM/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+    <topic name="galbenMediu">
+      <category>
+          <pattern> VANILIE </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/dior/dior-addict-eau-de-toilette2014-eau-de-toilette-pentru-femei/p-496112/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> MAR </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.emag.ro/apa-de-toaleta-nina-ricci-nina-femei-80ml-3137370180760/pd/D0KMMYBBM/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> PIERSICA </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/versace/yellow-diamond-eau-de-toilette-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+
+    <topic name="verdeMediu">
+      <category>
+          <pattern> LACRAMIOARE </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/cacharel/amor-amor-eau-de-toilette-pentru-femei/p-60067/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> CIMBRU </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/caron/eau-fraiche-eau-de-toilette-pentru-femei/p-11634241/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> LAMAIE </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/guerlain/aqua-allegoria-pera-granita-eau-de-toilette-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+
+    <topic name="albastruMediu">
+      <category>
+          <pattern> CRIN </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/calvin-klein/sheer-beauty-eau-de-toilette-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> ZAMBILE </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/issey-miyake/a-scent-by-issey-miyake-eau-de-toilette-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> IASOMIE </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/bvlgari/jasmin-noir-mon-lexquise-eau-de-toilette-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+
+        <topic name="indigoMediu">
+      <category>
+          <pattern> LILIAC </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/gucci/guilty-eau-de-toilette-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> FLOARE DE CIRES </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/mugler/alien-eau-sublime-eau-de-toilette-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> NARCISA </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/carolina-herrera/herrera-eau-de-toilette-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+
+    <topic name="violetMediu">
+      <category>
+          <pattern> TRANDAFIR </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/dolce-gabbana/light-blue-eau-de-toilette-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> BUJOR </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/joop/wow-for-women-eau-de-toilette-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> ZMEURA </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/yves-saint-laurent/mon-paris-eau-de-toilette-pentru-femei/p-630440/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+
+
+
+
+
+    <topic name="culoareMediuParfum">
+      <category>
+          <pattern> ROSU </pattern>
+          <template>
+              Ce miros preferi dintre piper, ghimbir si mosc?
+              <think><set name="topic">rosuMediuParfum</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> ORANJ </pattern>
+          <template>
+              Ce miros preferi dintre portocala, mandarina si mango?
+              <think><set name="topic">oranjMediuParfum</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> GALBEN </pattern>
+          <template>
+              Ce miros preferi dintre vanilie, mar si piersica?
+              <think><set name="topic">galbenMediuParfum</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> VERDE </pattern>
+          <template>
+              Ce miros preferi dintre lacramioare, cimbru si lamaie?
+              <think><set name="topic">verdeMediuParfum</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> ALBASTRU </pattern>
+          <template>
+              Ce miros preferi dintre crin, zambile si iasomie?
+              <think><set name="topic">albastruMediuParfum</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> INDIGO </pattern>
+          <template>
+              Ce miros preferi dintre liliac, floare de cires si narcisa?
+              <think><set name="topic">indigoMediuParfum</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> VIOLET </pattern>
+          <template>
+              Ce miros preferi dintre trandafir, bujor si zmeura?
+              <think><set name="topic">violetMediuParfum</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste culori.</template>
+      </category>
+    </topic>
+
+
+    <topic name="rosuMediuParfum">
+      <category>
+          <pattern> PIPER </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/versace/crystal-noir-eau-de-parfum-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> GHIMBIR </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/jo-malone/nutmeg-ginger-eau-de-parfum-unisex/p-565809/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> MOSC </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.emag.ro/apa-de-parfum-calvin-klein-obsessed-femei-100-ml-13063/pd/DP1H0HBBM/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+
+
+    <topic name="oranjMediuParfum">
+      <category>
+          <pattern> PORTOCALA </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.emag.ro/apa-de-parfum-jean-paul-gaultier-scandal-femei-80-ml-8435415006408/pd/D6BK5NBBM/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> MANDARINA </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/chanel/allure-eau-de-parfum-pentru-femei/p-63999/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> MANGO </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/moschino/gold-fresh-couture-eau-de-parfum-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+
+    <topic name="galbenMediuParfum">
+      <category>
+          <pattern> VANILIE </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/lancome/tresor-midnight-rose-eau-de-parfum-pentru-femei/p-74440/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> MAR </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/dolce-gabbana/light-blue-eau-intense-eau-de-parfum-pentru-femei/p-646166/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> PIERSICA </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/hugo-boss/boss-the-scent-intense-eau-de-parfum-pentru-femei/p-640904/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+
+    <topic name="verdeMediuParfum">
+      <category>
+          <pattern> LACRAMIOARE </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/calvin-klein/eternity-eau-de-parfum-pentru-femei/p-60106/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> CIMBRU </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/sooud/al-jana-eau-de-parfum-pentru-femei/p-15821671/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> LAMAIE </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/yves-saint-laurent/elle-eau-de-parfum-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+
+    <topic name="albastruMediuParfum">
+      <category>
+          <pattern> CRIN </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/hugo-boss/femme-eau-de-parfum-pentru-femei/p-62517/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> ZAMBILE </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.emag.ro/apa-de-parfum-kenzo-d-ete-femei-75ml-3352817718348/pd/D6B00YBBM/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> IASOMIE </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/tom-ford/white-patchouli-eau-de-parfum-pentru-femei/p-81372/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+
+        <topic name="indigoMediuParfum">
+      <category>
+          <pattern> LILIAC </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/calvin-klein/endless-euphoria-eau-de-parfum-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> FLOARE DE CIRES </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/chloe/fleur-de-parfum-eau-de-parfum-pentru-femei/p-588086/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> NARCISA </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/dkny/women-energizing-2011-eau-de-parfum-pentru-femei/p-75725/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+
+    <topic name="violetMediuParfum">
+      <category>
+          <pattern> TRANDAFIR </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/tom-ford/noir-pour-femme-eau-de-parfum-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> BUJOR </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/versace/bright-crystal-absolu-eau-de-parfum-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> ZMEURA </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/paco-rabanne/lady-million-eau-de-parfum-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+
+
+
+
+
+
+
+
+    <topic name="genRidicat">
+      <category>
+          <pattern> ^ TOALETA</pattern>
+          <template>
+              Ce culoare preferi din spectrul ROGVAIV? (rosu, oranj, galben, verde, albastru, indigo sau violet)
+              <think><set name="topic">culoareRidicat</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> ^ PARFUM</pattern>
+          <template>
+              Ce culoare preferi din spectrul ROGVAIV? (rosu, oranj, galben, verde, albastru, indigo sau violet)
+              <think><set name="topic">culoareRidicatParfum</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre cele doua variante.</template>
+      </category>
+    </topic>
+
+
+    <topic name="culoareRidicat">
+      <category>
+          <pattern> ROSU </pattern>
+          <template>
+              Ce miros preferi dintre piper, ghimbir si mosc?
+              <think><set name="topic">rosuRidicat</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> ORANJ </pattern>
+          <template>
+              Ce miros preferi dintre portocala, mandarina si mango?
+              <think><set name="topic">oranjRidicat</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> GALBEN </pattern>
+          <template>
+              Ce miros preferi dintre vanilie, mar si piersica?
+              <think><set name="topic">galbenRidicat</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> VERDE </pattern>
+          <template>
+              Ce miros preferi dintre lacramioare, cimbru si lamaie?
+              <think><set name="topic">verdeRidicat</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> ALBASTRU </pattern>
+          <template>
+              Ce miros preferi dintre crin, zambile si iasomie?
+              <think><set name="topic">albastruRidicat</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> INDIGO </pattern>
+          <template>
+              Ce miros preferi dintre liliac, floare de cires si narcisa?
+              <think><set name="topic">indigoRidicat</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> VIOLET </pattern>
+          <template>
+              Ce miros preferi dintre trandafir, bujor si zmeura?
+              <think><set name="topic">violetRidicat</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste culori.</template>
+      </category>
+    </topic>
+
+
+    <topic name="rosuRidicat">
+      <category>
+          <pattern> PIPER </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/chanel/allure-sensuelle-eau-de-toilette-pentru-femei/p-65880/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> GHIMBIR </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.emag.ro/apa-de-toaleta-hermes-un-jardin-apres-la-mousson-unisex-100ml-3346131900022/pd/D6CZ0YBBM/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> MOSC </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/chanel/chance-eau-vive-eau-de-toilette-pentru-femei/p-15782426/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+
+
+    <topic name="oranjRidicat">
+      <category>
+          <pattern> PORTOCALA </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.douglas.ro/p/bvlgari-omnia-paraiba-eau-de-toilette-911587?number=911589"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> MANDARINA </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/bois-1920/agrumi-amari-di-sicilia-eau-de-toilette-unisex/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> MANGO </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.sephora.ro/parfumuri/parfumuri-pentru-ea-si-el/un-jardin-sur-le-nil-eau-de-toilette-apa-de-toaleta-100-ml-127420.html"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+    <topic name="galbenRidicat">
+      <category>
+          <pattern> VANILIE </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/dior/hypnotic-poison-eau-de-toilette-pentru-femei/p-60565//"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> MAR </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/hugo-boss/boss-orange-eau-de-toilette-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> PIERSICA </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/dior/miss-dior-blooming-bouqet-eau-de-toilette-pentru-femei/p-15707426/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+
+    <topic name="verdeRidicat">
+      <category>
+          <pattern> LACRAMIOARE </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/dior/diorissimo-les-creations-de-monsieur-eau-de-toilette-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> CIMBRU </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/etro/shaal-nur-eau-de-toilette-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> LAMAIE </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/yves-saint-laurent/black-opium-glowing-eau-de-toilette-pentru-femei/p-11603348/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+
+    <topic name="albastruRidicat">
+      <category>
+          <pattern> CRIN </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.emag.ro/apa-de-toaleta-christian-dior-dune-femei-100ml-3348900103870/pd/D4L5SBBBM/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> ZAMBILE </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/bois-1920/sandalo-e-the-eau-de-toilette-unisex/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> IASOMIE </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/dior/hypnotic-poison-eau-de-toilette-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+
+        <topic name="indigoRidicat">
+      <category>
+          <pattern> LILIAC </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/bois-1920/come-lamore-eau-de-toilette-unisex/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> FLOARE DE CIRES </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "http://www.elefant.ro/cosmetice-si-parfumuri/parfumuri/apa-de-toaleta/apa-de-toaleta-signorina-in-fiore-iii-ml-pentru-femei-incolor-732308-355.html"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> NARCISA </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/versace/versense-eau-de-toilette-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+
+    <topic name="violetRidicat">
+      <category>
+          <pattern> TRANDAFIR </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/gucci/rush-eau-de-toilette-pentru-femei/p-60424/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> BUJOR </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/sensai/the-silk-eau-de-toilette-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> ZMEURA </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/lancome/la-nuit-tresor-eau-de-toilette-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+
+
+
+
+
+    <topic name="culoareRidicatParfum">
+      <category>
+          <pattern> ROSU </pattern>
+          <template>
+              Ce miros preferi dintre piper, ghimbir si mosc?
+              <think><set name="topic">rosuRidicatParfum</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> ORANJ </pattern>
+          <template>
+              Ce miros preferi dintre portocala, mandarina si mango?
+              <think><set name="topic">oranjRidicatParfum</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> GALBEN </pattern>
+          <template>
+              Ce miros preferi dintre vanilie, mar si piersica?
+              <think><set name="topic">galbenRidicatParfum</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> VERDE </pattern>
+          <template>
+              Ce miros preferi dintre lacramioare, cimbru si lamaie?
+              <think><set name="topic">verdeRidicatParfum</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> ALBASTRU </pattern>
+          <template>
+              Ce miros preferi dintre crin, zambile si iasomie?
+              <think><set name="topic">albastruRidicatParfum</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> INDIGO </pattern>
+          <template>
+              Ce miros preferi dintre liliac, floare de cires si narcisa?
+              <think><set name="topic">indigoRidicatParfum</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> VIOLET </pattern>
+          <template>
+              Ce miros preferi dintre trandafir, bujor si zmeura?
+              <think><set name="topic">violetRidicatParfum</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste culori.</template>
+      </category>
+    </topic>
+
+
+    <topic name="rosuRidicatParfum">
+      <category>
+          <pattern> PIPER </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.emag.ro/apa-de-parfum-givenchy-hot-couture-femei-100ml-3274879282363/pd/D915SBBBM/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> GHIMBIR </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.emag.ro/apa-de-parfum-giorgio-armani-code-for-women-femei-75-ml-parf-gior-106496/pd/DQ26LMBBM/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> MOSC </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/lancome/miracle-eau-de-parfum-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+
+
+    <topic name="oranjRidicatParfum">
+      <category>
+          <pattern> PORTOCALA </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/chanel/coco-mademoiselle-eau-de-parfum-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> MANDARINA </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/givenchy/ange-ou-demon-eau-de-parfum-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> MANGO </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/kenzo/jungle-l-elephant-eau-de-parfum-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+
+    <topic name="galbenRidicatParfum">
+      <category>
+          <pattern> VANILIE </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/lancome/la-vie-est-belle-eau-de-parfum-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> MAR </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "hhttps://www.notino.ro/dkny/be-delicious-eau-de-parfum-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> PIERSICA </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/dior/jadore-eau-de-parfum-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+
+    <topic name="verdeRidicatParfum">
+      <category>
+          <pattern> LACRAMIOARE </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/chloe/chloe-eau-de-parfum-pentru-femei/p-67469/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> CIMBRU </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/tom-ford/tuscan-leather-eau-de-parfum-unisex/p-449198/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> LAMAIE </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/armani/emporio-because-its-you-eau-de-parfum-pentru-femei/p-652812/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+
+    <topic name="albastruRidicatParfum">
+      <category>
+          <pattern> CRIN </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/tom-ford/orchid-soleil-eau-de-parfum-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> ZAMBILE </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/hermes/24-faubourg-eau-de-parfum-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> IASOMIE </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.douglas.ro/p/mugler-eau-de-parfum-alien-reincarcabil-209628?number=209629"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+
+        <topic name="indigoRidicatParfum">
+      <category>
+          <pattern> LILIAC </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/creed/aventus-eau-de-parfum-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> FLOARE DE CIRES </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/kenzo/amour-eau-de-parfum-pentru-femei/p-62130/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> NARCISA </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/by-kilian/good-girl-gone-bad-eau-de-parfum-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+
+    <topic name="violetRidicatParfum">
+      <category>
+          <pattern> TRANDAFIR </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/paco-rabanne/black-xs2018-eau-de-parfum-pentru-femei/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> BUJOR </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/estee-lauder/wood-mystique-eau-de-parfum-unisex/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> ZMEURA </pattern>
+          <template>
+          	Cred ca varianta potrivita pentru dumneavoastra este urmatoarea:
+			<a href = "https://www.notino.ro/gucci/intense-oud-eau-de-parfum-unisex/"> link</a>
+			<br/>
+			Doriti sa mai incercati o data?
+			<think><set name="topic">repetare</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern>*</pattern>
+          <template>Te rog sa alegi una dintre aceste variante.</template>
+      </category>
+    </topic>
+
+
+    <topic name="repetare">
+      <category>
+          <pattern> DA </pattern>
+          <template>
+				In ce buget te incadrezi?
+			<think><set name="topic">buget</set></think>
+          </template>
+      </category>
+
+      <category>
+          <pattern> NU </pattern>
+          <template>
+				La revedere!
+          </template>
+      </category>
+    </topic>
+</aiml>
